@@ -103,7 +103,7 @@ class Home() : Fragment() {
 
         for (d in photos) {
 
-            if (filterItem in d.user.username.toLowerCase()) {
+            if (filterItem.lowercase() in d.user.username) {
 
                 templeList.add(d)
 
