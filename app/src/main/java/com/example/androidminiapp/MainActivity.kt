@@ -2,13 +2,9 @@ package com.example.androidminiapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.SearchView
 import com.example.androidminiapp.adapters.ViewPagerAdapter
 import com.example.androidminiapp.databinding.ActivityMainBinding
-import com.example.androidminiapp.fragments.Category
 import com.example.androidminiapp.fragments.Home
-import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
 

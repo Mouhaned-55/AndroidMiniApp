@@ -25,7 +25,7 @@
             <ImageView
                 android:id="@+id/photo"
                 android:layout_width="match_parent"
-                android:layout_height="350dp"
+                android:layout_height="340dp"
                 android:layout_gravity="center"
                 android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -36,10 +36,12 @@
 
             <TextView
                 android:id="@+id/username"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_person"
                 android:text="username"
+                android:layout_marginTop="7dp"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -53,7 +55,9 @@
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                android:layout_margin="5dp"
                 android:layout_marginStart="20dp"
+                android:drawableStart="@drawable/ic_date"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:text="created_at"

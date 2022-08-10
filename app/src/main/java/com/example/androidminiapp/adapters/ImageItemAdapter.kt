@@ -12,10 +12,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.enigmaticdevs.wallpaperapp.models.Photo
 import com.example.androidminiapp.R
-import java.time.format.DateTimeFormatter
 
-class ImageItemAdapter(private val photos: MutableList<Photo>, private val context: Context) :
+class ImageItemAdapter(private var photos: MutableList<Photo>, private val context: Context) :
     RecyclerView.Adapter<ImageItemAdapter.ViewHolder>() {
+
+    private lateinit var mListener: OnItemClickListener
+
+    fun setOnItemClickListener(listener: OnItemClickListener) {
+        mListener = listener
+    }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val photo: ImageView = itemView.findViewById(R.id.photo)
@@ -37,10 +42,28 @@ class ImageItemAdapter(private val photos: MutableList<Photo>, private val conte
             .into(holder.photo)
         holder.username.text = photos[position].user.username.toString()
         holder.created_at.text = photos[position].created_at.toString()
+
+
+        holder.itemView.setOnClickListener {
+            mListener.onItemClick(position)
+        }
     }
 
     override fun getItemCount(): Int {
         return photos.size
     }
+
+    fun updateList(list: MutableList<Photo>) {
+
+        photos = list
+
+        notifyDataSetChanged()
+
+    }
+
+    interface OnItemClickListener {
+        fun onItemClick(position: Int)
+    }
+
 
 }

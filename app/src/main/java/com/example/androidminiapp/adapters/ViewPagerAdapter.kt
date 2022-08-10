@@ -3,8 +3,6 @@ package com.example.androidminiapp.adapters
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.androidminiapp.fragments.Category
-import com.example.androidminiapp.fragments.Home
 
 class ViewPagerAdapter(fm: FragmentActivity) : FragmentStateAdapter(fm) {
     private val mFragment: MutableList<Fragment> = ArrayList()

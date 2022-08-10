@@ -1,9 +1,12 @@
 package com.example.androidminiapp.fragments
 
+import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.*
-import android.widget.SearchView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.enigmaticdevs.wallpaperapp.models.Photo
@@ -11,6 +14,7 @@ import com.example.androidminiapp.R
 import com.example.androidminiapp.adapters.ImageItemAdapter
 import com.example.androidminiapp.databinding.FragmentHomeBinding
 import com.example.androidminiapp.services.RetrofitInstance
+import com.example.androidminiapp.simpleActivities.DetailsActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -39,15 +43,13 @@ class Home() : Fragment() {
         val getPost = RetrofitInstance.api.getRecentPhotos(page, 16, sort)
         getPost.enqueue(object : Callback<List<Photo>> {
             override fun onResponse(call: Call<List<Photo>>, response: Response<List<Photo>>) {
-                if(response.isSuccessful)
-                {
+                if (response.isSuccessful) {
                     photos.clear()
-                    Log.d("response",response.body().toString())
-                    response.body()?.let { photos.addAll(it)}
+                    Log.d("response", response.body().toString())
+                    response.body()?.let { photos.addAll(it) }
                     adapter.notifyDataSetChanged()
-                }
-                else
-                    Log.d("response",response.body().toString())
+                } else
+                    Log.d("response", response.body().toString())
             }
 
             override fun onFailure(call: Call<List<Photo>>, t: Throwable) {
@@ -55,14 +57,61 @@ class Home() : Fragment() {
             }
         })
 
+        binding.searchView.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                Log.e("beforeTextChanged", "beforeTextChanged")
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                Log.e("onTextChanged", "onTextChanged")
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                filterList(s.toString())
+            }
+        })
     }
-    
 
 
     private fun initRecyclerView() {
         binding.homeRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         adapter = ImageItemAdapter(photos, requireContext())
         binding.homeRecyclerView.adapter = adapter
+
+        adapter.setOnItemClickListener(object : ImageItemAdapter.OnItemClickListener {
+            override fun onItemClick(position: Int) {
+                val intent = Intent(requireContext(), DetailsActivity::class.java)
+
+                intent.putExtra("username", photos[position].user.username)
+
+                intent.putExtra("description", photos[position].description)
+
+                intent.putExtra("photo", photos[position].url.regular)
+
+                intent.putExtra("created_at", photos[position].created_at)
+
+                intent.putExtra("profile_image", photos[position].user.profileImage.large)
+
+                startActivity(intent)
+            }
+        })
+    }
+
+    private fun filterList(filterItem: String) {
+
+        var templeList: MutableList<Photo> = ArrayList()
+
+        for (d in photos) {
+
+            if (filterItem in d.user.username.toString()) {
+
+                templeList.add(d)
+
+            }
+
+        }
+
+        adapter.updateList(templeList)
     }
 
 
