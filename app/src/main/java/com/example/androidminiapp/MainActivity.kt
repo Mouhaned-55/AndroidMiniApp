@@ -2,9 +2,9 @@ package com.example.androidminiapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.androidminiapp.adapters.ViewPagerAdapter
+import com.example.androidminiapp.ui.adapters.ViewPagerAdapter
 import com.example.androidminiapp.databinding.ActivityMainBinding
-import com.example.androidminiapp.fragments.Home
+import com.example.androidminiapp.ui.fragments.Home
 
 class MainActivity : AppCompatActivity() {
 

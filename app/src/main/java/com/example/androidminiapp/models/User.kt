@@ -1,5 +1,6 @@
 package com.enigmaticdevs.wallpaperapp.models
 
+import com.example.androidminiapp.models.ProfileImage
 import com.google.gson.annotations.SerializedName
 
 data class User(@SerializedName("id")  val id: String,

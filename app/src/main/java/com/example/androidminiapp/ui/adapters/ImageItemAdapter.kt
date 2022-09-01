@@ -1,4 +1,4 @@
-package com.example.androidminiapp.adapters
+package com.example.androidminiapp.ui.adapters
 
 import android.content.Context
 import android.graphics.Color
@@ -13,7 +13,7 @@ import com.bumptech.glide.Glide
 import com.enigmaticdevs.wallpaperapp.models.Photo
 import com.example.androidminiapp.R
 
-class ImageItemAdapter(private var photos: MutableList<Photo>, private val context: Context) :
+class ImageItemAdapter(private var photos: List<Photo>, private val context: Context) :
     RecyclerView.Adapter<ImageItemAdapter.ViewHolder>() {
 
     private lateinit var mListener: OnItemClickListener

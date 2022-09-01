@@ -1,5 +1,7 @@
 package com.enigmaticdevs.wallpaperapp.models
 
+import com.example.androidminiapp.models.PhotoUrl
+import com.example.androidminiapp.models.Sponsorship
 import com.google.gson.annotations.SerializedName
 import kotlinx.serialization.Serializable
 import java.util.*

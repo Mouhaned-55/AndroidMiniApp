@@ -1,4 +1,4 @@
-package com.example.androidminiapp.simpleActivities
+package com.example.androidminiapp.ui.activities
 
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
@@ -25,7 +25,6 @@ class DetailsActivity : AppCompatActivity() {
         val profileImage = intent.getStringExtra("profile_image")
         val created = intent.getStringExtra("created_at")
         val updated = intent.getStringExtra("updated_at")
-
 
         binding.name.text = username
         binding.descriptionPopup.text = description

@@ -14,10 +14,15 @@
         android:theme="@style/Theme.AndroidMiniApp"
         tools:targetApi="31">
         <activity
-            android:name=".simpleActivities.DetailsActivity"
+            android:name=".StoryPopUp"
+            android:exported="false"
+            android:label="@string/title_activity_story_pop_up"
+            android:theme="@style/Theme.AndroidMiniApp.NoActionBar" />
+        <activity
+            android:name=".ui.activities.DetailsActivity"
             android:exported="false" />
         <activity
-            android:name="com.codingstuff.loginandsignup.SignInActivity"
+            android:name=".ui.activities.authentication.SignInActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,7 +35,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

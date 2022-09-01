@@ -1,4 +1,4 @@
-package com.enigmaticdevs.wallpaperapp.models
+package com.example.androidminiapp.models
 
 import com.google.gson.annotations.SerializedName
 import kotlinx.serialization.Serializable

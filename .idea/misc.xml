@@ -3,16 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/custom_bg.xml" value="0.1005" />
+        <entry key="app/src/main/res/drawable/custom_bg_grey.xml" value="0.1005" />
         <entry key="app/src/main/res/drawable/ic_person.xml" value="0.2525" />
         <entry key="app/src/main/res/drawable/searchview_background.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_details.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_sign_in.xml" value="0.18" />
-        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_sign_in.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_story_pop_up.xml" value="0.16134751773049646" />
+        <entry key="app/src/main/res/layout/content_story_pop_up.xml" value="0.16134751773049646" />
         <entry key="app/src/main/res/layout/fragment_category.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/fragment_second.xml" value="0.16134751773049646" />
+        <entry key="app/src/main/res/layout/fragment_story.xml" value="0.1" />
         <entry key="app/src/main/res/layout/gragment_home.xml" value="0.16084093211752787" />
         <entry key="app/src/main/res/layout/item_photo.xml" value="0.2719298245614035" />
+        <entry key="app/src/main/res/layout/story_item.xml" value="0.1911231884057971" />
+        <entry key="app/src/main/res/layout/story_popup.xml" value="0.16084093211752787" />
         <entry key="app/src/main/res/menu/main_menu.xml" value="0.18" />
       </map>
     </option>
@@ -22,5 +30,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.22" />
+      </ProjectState>
+    </option>
   </component>
 </project>
