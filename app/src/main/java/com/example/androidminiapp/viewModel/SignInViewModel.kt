@@ -17,7 +17,6 @@ import kotlinx.coroutines.launch
 
 class SignInViewModel(private val repository: RegisterRepository, application: Application) :
     AndroidViewModel(application), Observable {
-//     private lateinit var firebaseAuth: FirebaseAuth
 
     val users = repository.users
 

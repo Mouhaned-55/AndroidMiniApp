@@ -27,7 +27,7 @@ class StoryPopUp(superContext: Context,
 
             this.dismiss()
 
-        }, 3000)
+        }, 10000)
     }
 
     private fun setupComponents() {
